@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.es/svg/static/icons/svg/3892/3892789.svg">
+    <title>Hacedor de comentarios</title>
+</head>
+<body>
+<!-- //HTML VUEceado ----------------------------------------------------------------------->
+
+    <div class="cont" id="miniapp">
+        <input type="text" 
+                :placeholder="placeholderDinamico.contP"
+                v-model="texto"
+                @keyup.enter.prevent="comentar"
+        >
+        <div v-for="(item, index) in contenido" class="caja">
+            <p>{{item}}</p>
+            <button @click="eliminarItem(index)">
+                <!-- <span class="tooltip">Cerrar</span> -->
+            </button>
+        </div>
+    </div>
+
+<!-- // CDN -------------------------------------------------------------------------------->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- <script src="vue.js"></script> -->
+    
+<!-- //JS -------------------------------------------------------------------------------->
+
+    <script>
+        const app = new Vue({
+            el: '#miniapp',
+            data() {
+                return{
+                    contenido: [ ],
+                    placeholdersillos: [
+                        {id: 0, contP: 'Escribe algo'},
+                        {id: 1, contP: 'Dale, prueba con "Hola Mundo"'},
+                        {id: 2, contP: 'Dime todos tus secretos'},
+                        {id: 3, contP: 'Pruebame bb 7u7'},
+                        {id: 4, contP: 'Solo soy un programa X, escribe lo que se te venga en gana'},
+                        {id: 5, contP: 'Que tal... si escribes una lista de compras'},
+                        {id: 6, contP: 'Escribe y presiona ENTER'}
+                    ]
+                }
+            },
+            methods:{
+                comentar(){
+                    this.contenido.push( this.texto )
+                    this.texto = ''
+                },
+                eliminarItem(id){
+                    this.contenido.splice(id,1)
+                }
+            },
+            computed:{
+                placeholderDinamico(){
+                    return this.placeholdersillos[Math.floor(Math.random() * this.placeholdersillos.length)]
+                }
+            }
+        })
+    </script>
+
+<!-- //-------------------------------------------------------------------------------->
+
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        outline: none;
+        border-style: none;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Nunito', sans-serif;
+        color: black;
+        transition: 0.5s ease-in-out;
+        box-sizing:border-box;
+        -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
+        transition: .7s ease-in-out;
+    }
+    :root{
+        --verde: #41B883;
+    }
+    input[type=text] {
+        transition: border-width 0.6s linear;
+        color: var(--verde);
+        border-left: 10px solid var(--verde);
+        border-right: 10px solid var(--verde);
+    }
+    ::placeholder{
+        color:  #637591;
+    }
+    body{
+        background-color:#282C34;
+    }
+    .cont{   
+        margin: 10px auto;
+        width: 70%;
+    }
+    .cont > *{
+        margin: 20px auto;
+        padding: 30px;
+        font-size: 25px;
+        background-color: rgb(245, 245, 245);
+        border-radius: 30px;
+    }
+    .cont input{
+        margin: 20px auto;
+        width: 100%;
+    }
+    .cont .caja{
+        position: relative;
+        word-wrap: break-word;
+        color: #282C34;
+        /* box-shadow: inset 0px 0px 20px 0px black; */
+    }
+    .cont button{
+        position: absolute;
+        right: 40px;
+        top: 29px;
+        transition: 0.2 ease-in-out;
+        cursor: pointer;
+        opacity: 0%;
+        background-color: #e77272;
+        clip-path: circle(40% at 50% 50%);
+        height: 30px;
+        width: 30px;
+    }
+    .caja:hover button, .caja:focus button{
+        opacity: 100%;
+    }
+    .caja button:hover {
+        background-color: #cc4c4c;
+        clip-path: circle(50% at 50% 50%);
+    }
+</style>
+</html>
