@@ -64,6 +64,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script> 
+        document.body.oncontextmenu = function() {return false;}
+    </script>
 </body>
 
 <style>
@@ -122,8 +125,14 @@
         /* background-color: var(--colorA2); */
         display: flex;
         margin: 130px auto;
-        width: 95%;
-        height: 400px;
+        width: 1500px;
+        height: 340px;
+        border-radius: 10px;
+        border: 6px solid var(--baseO3);
+        overflow: hidden;
+    }
+    .piano > *, .piano > * > *{
+        transition: 0s;
     }
     .blanca{
         position: relative;
@@ -135,16 +144,16 @@
         box-shadow: inset 0px -1px 26px -9px rgba(0,0,0,0.75);
     }
     .negra:active{
-        height: 240;
+        height: 53%;
     }
     .negra{
         position: absolute;
         z-index: 2;
+        top: -10px;        
         left: 42px;
         background-color: rgb(0, 0, 0);
         width: 50px;
-        height: 250px;
-
+        height: 55%;
     }
 </style>
 </html>
