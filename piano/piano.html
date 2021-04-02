@@ -6,45 +6,61 @@
     <title>Piano</title>
 </head>
 <body>
+    <div class="titulo">Piano</div>
     <div class="cont piano">
-        <ul id="3c"></ul>
-        <ul id="3c-"></ul>
-        <ul id="3d"></ul>
-        <ul id="3d-"></ul>
-        <ul id="3e"></ul>
-        <ul id="3f"></ul>
-        <ul id="3f-"></ul>
-        <ul id="3g"></ul>
-        <ul id="3g-"></ul>
-        <ul id="3a"></ul>
-        <ul id="3a-"></ul>
-        <ul id="3b"></ul>
+        <ul class="blanca" id="3c">
+            <ul class="negra"id="3c-"></ul>
+        </ul>
+        <ul class="blanca" id="3d">
+            <ul class="negra" id="3d-"></ul>
+        </ul>
+        <ul class="blanca" id="3e"></ul>
+        <ul class="blanca" id="3f">
+            <ul class="negra" id="3f-"></ul>
+        </ul>
+        <ul class="blanca" id="3g">
+            <ul class="negra" id="3g-"></ul>
+        </ul>
+        <ul class="blanca" id="3a">
+            <ul class="negra" id="3a-"></ul>
+        </ul>
+        <ul class="blanca" id="3b"></ul>
 
-        <ul id="2c"></ul>
-        <ul id="2c-"></ul>
-        <ul id="2d"></ul>
-        <ul id="2d-"></ul>
-        <ul id="2e"></ul>
-        <ul id="2f"></ul>
-        <ul id="2f-"></ul>
-        <ul id="2g"></ul>
-        <ul id="2g-"></ul>
-        <ul id="2a"></ul>
-        <ul id="2a-"></ul>
-        <ul id="2b"></ul>
+        <ul class="blanca" id="2c">
+            <ul class="negra" id="2c-"></ul>
+        </ul>
+        <ul class="blanca" id="2d">
+            <ul class="negra" id="2d-"></ul>
+        </ul>
+        <ul class="blanca" id="2e"></ul>
+        <ul class="blanca" id="2f">
+            <ul class="negra" id="2f-"></ul>
+        </ul>
+        <ul class="blanca" id="2g">
+            <ul class="negra" id="2g-"></ul>
+        </ul>
+        <ul class="blanca" id="2a">
+            <ul class="negra" id="2a-"></ul>
+        </ul>
+        <ul class="blanca" id="2b"></ul>
         
-        <ul id="1c"></ul>
-        <ul id="1c-"></ul>
-        <ul id="1d"></ul>
-        <ul id="1d-"></ul>
-        <ul id="1e"></ul>
-        <ul id="1f"></ul>
-        <ul id="1f-"></ul>
-        <ul id="1g"></ul>
-        <ul id="1g-"></ul>
-        <ul id="1a"></ul>
-        <ul id="1a-"></ul>
-        <ul id="1b"></ul>
+        <ul class="blanca" id="1c">
+            <ul class="negra" id="1c-"></ul>
+        </ul>
+        <ul class="blanca" id="1d">
+            <ul class="negra" id="1d-"></ul>
+        </ul>
+        <ul class="blanca" id="1e"></ul>
+        <ul class="blanca"  id="1f">
+            <ul class="negra" id="1f-"></ul>
+        </ul>
+        <ul class="blanca" id="1g">
+            <ul class="negra" id="1g-"></ul>
+        </ul>
+        <ul class="blanca" id="1a">
+            <ul class="negra" id="1a-"></ul>
+        </ul>
+        <ul class="blanca" id="1b"></ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -94,9 +110,41 @@
        --colorA3: #FDD18A;
        --colorG4: #41B883;
     }
+    .titulo{
+        /* background-color: var(--colorB2); */
+        font-size: 70px;
+        font-weight: bolder;
+        text-align: center;
+        padding: 20px;
+
+    }
     .piano{
-        background-color: var(--colorA2);
-        margin: 70px auto;
+        /* background-color: var(--colorA2); */
+        display: flex;
+        margin: 130px auto;
+        width: 95%;
+        height: 400px;
+    }
+    .blanca{
+        position: relative;
+        width: 100px;
+        height: 100%;
+        border: 2px solid black;
+    }
+    .blanca:active{
+        box-shadow: inset 0px -1px 26px -9px rgba(0,0,0,0.75);
+    }
+    .negra:active{
+        height: 240;
+    }
+    .negra{
+        position: absolute;
+        z-index: 2;
+        left: 42px;
+        background-color: rgb(0, 0, 0);
+        width: 50px;
+        height: 250px;
+
     }
 </style>
 </html>
