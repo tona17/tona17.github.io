@@ -8,59 +8,72 @@
 <body>
     <div class="titulo">Piano</div>
     <div class="cont piano">
-        <ul class="blanca" id="3c">
+        <div class="par">
+            <ul class="blanca" id="3c"></ul>
             <ul class="negra"id="3c-"></ul>
-        </ul>
-        <ul class="blanca" id="3d">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="3d"></ul>
             <ul class="negra" id="3d-"></ul>
-        </ul>
-        <ul class="blanca" id="3e"></ul>
-        <ul class="blanca" id="3f">
+        </div>
+                    <ul class="solo" id="3e"></ul>
+        <div class="par">
+            <ul class="blanca" id="3f"></ul>
             <ul class="negra" id="3f-"></ul>
-        </ul>
-        <ul class="blanca" id="3g">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="3g"></ul>
             <ul class="negra" id="3g-"></ul>
-        </ul>
-        <ul class="blanca" id="3a">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="3a"></ul>
             <ul class="negra" id="3a-"></ul>
-        </ul>
-        <ul class="blanca" id="3b"></ul>
-
-        <ul class="blanca" id="2c">
+        </div>
+                    <ul class="solo" id="3b"></ul>
+        <div class="par">
+            <ul class="blanca" id="2c"></ul>
             <ul class="negra" id="2c-"></ul>
-        </ul>
-        <ul class="blanca" id="2d">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="2d"></ul>
             <ul class="negra" id="2d-"></ul>
-        </ul>
-        <ul class="blanca" id="2e"></ul>
-        <ul class="blanca" id="2f">
+        </div>
+                    <ul class="solo" id="2e"></ul>
+        <div class="par">
+            <ul class="blanca" id="2f"></ul>
             <ul class="negra" id="2f-"></ul>
-        </ul>
-        <ul class="blanca" id="2g">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="2g"></ul>
             <ul class="negra" id="2g-"></ul>
-        </ul>
-        <ul class="blanca" id="2a">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="2a"></ul>
             <ul class="negra" id="2a-"></ul>
-        </ul>
-        <ul class="blanca" id="2b"></ul>
-        
-        <ul class="blanca" id="1c">
+        </div>
+                    <ul class="solo" id="2b"></ul>
+        <div class="par">
+            <ul class="blanca" id="1c"></ul>
             <ul class="negra" id="1c-"></ul>
-        </ul>
-        <ul class="blanca" id="1d">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="1d"></ul>
             <ul class="negra" id="1d-"></ul>
-        </ul>
-        <ul class="blanca" id="1e"></ul>
-        <ul class="blanca"  id="1f">
+        </div>
+                    <ul class="solo" id="1e"></ul>
+        <div class="par">
+            <ul class="blanca"  id="1f"></ul>
             <ul class="negra" id="1f-"></ul>
-        </ul>
-        <ul class="blanca" id="1g">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="1g"></ul>
             <ul class="negra" id="1g-"></ul>
-        </ul>
-        <ul class="blanca" id="1a">
+        </div>
+        <div class="par">
+            <ul class="blanca" id="1a"></ul>
             <ul class="negra" id="1a-"></ul>
-        </ul>
-        <ul class="blanca" id="1b"></ul>
+        </div>
+                    <ul class="blanca" id="1b"></ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -119,7 +132,6 @@
         font-weight: bolder;
         text-align: center;
         padding: 20px;
-
     }
     .piano{
         /* background-color: var(--colorA2); */
@@ -134,13 +146,21 @@
     .piano > *, .piano > * > *{
         transition: 0s;
     }
-    .blanca{
+    .par{
         position: relative;
-        width: 100px;
+        background-color: white;
         height: 100%;
-        border: 2px solid black;
     }
-    .blanca:active{
+    .solo, .par{
+        width: 71.4px;
+        border-right: 3px solid var(--baseO);
+
+    }
+    .par .blanca{
+        width: 100%;
+        height: 100%;
+    }
+    .blanca:active, .solo:active{
         box-shadow: inset 0px -1px 26px -9px rgba(0,0,0,0.75);
     }
     .negra:active{
@@ -148,9 +168,9 @@
     }
     .negra{
         position: absolute;
-        z-index: 2;
+        z-index: 1;
         top: -10px;        
-        left: 42px;
+        left: 45px;
         background-color: rgb(0, 0, 0);
         width: 50px;
         height: 55%;
