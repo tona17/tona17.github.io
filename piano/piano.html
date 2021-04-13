@@ -2,90 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.es/svg/static/icons/svg/3892/3892789.svg">
     <title>Piano</title>
 </head>
 <body>
+    <div class="cuerpo togglenocturno" id="miApp">
+        <div class="titulo togglenocturno">Piano</div>
+        <div class="botones">
+            <input class="boton" type="button" name="" id="notacion" @click="notacion()">
+            <input class="boton" type="button" name="" id="nocturno" @click="nocturno()">
+        </div>
 
-    <div class="titulo">Piano</div>
-    <div class="botones">
-        <input class="boton" type="button" name="" id="notacion">
-        <input class="boton" type="button" name="" id="nocturno">
+        <div class="cont piano" id="piano">
+            <div class="par">
+                <ul @click="sonido(36)" class="blanca" id="3c"><b class="notacion ame">C</b><b class="notacion eur" >Do</b></ul>
+                <ul @click="sonido(35)" class="negra"id="3c-"><b class="notacion ame">C#</b><b class="notacion eur" >Do#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(34)" class="blanca" id="3d"><b class="notacion ame">D</b><b class="notacion eur" >Re</b></ul>
+                <ul @click="sonido(33)" class="negra" id="3d-"><b class="notacion ame">D#</b><b class="notacion eur" >Re#</b></ul>
+            </div>
+                        <ul @click="sonido(32)" class="solo" id="3e"><b class="notacion ame">E</b><b class="notacion eur" >Mi</b></ul>
+            <div class="par">
+                <ul @click="sonido(31)" class="blanca" id="3f"><b class="notacion ame">F</b><b class="notacion eur" >Fa</b></ul>
+                <ul @click="sonido(30)" class="negra" id="3f-"><b class="notacion ame">F#</b><b class="notacion eur" >Fa#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(29)" class="blanca" id="3g"><b class="notacion ame">G</b><b class="notacion eur" >Sol</b></ul>
+                <ul @click="sonido(28)" class="negra" id="3g-"><b class="notacion ame">G#</b><b class="notacion eur" >Sol#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(27)" class="blanca" id="3a"><b class="notacion ame">A</b><b class="notacion eur" >La</b></ul>
+                <ul @click="sonido(26)" class="negra" id="3a-"><b class="notacion ame">A#</b><b class="notacion eur" >La#</b></ul>
+            </div>
+                        <ul @click="sonido(25)" class="solo" id="3b"><b class="notacion ame">B</b><b class="notacion eur" >Si</b></ul>
+            <div class="par">
+                <ul @click="sonido(24)" class="blanca" id="2c"><b class="notacion ame">C</b><b class="notacion eur" >Do</b></ul>
+                <ul @click="sonido(23)" class="negra" id="2c-"><b class="notacion ame">C#</b><b class="notacion eur" >Do#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(22)" class="blanca" id="2d"><b class="notacion ame">D</b><b class="notacion eur" >Re</b></ul>
+                <ul @click="sonido(21)" class="negra" id="2d-"><b class="notacion ame">D#</b><b class="notacion eur" >Re#</b></ul>
+            </div>
+                        <ul @click="sonido(20)" class="solo" id="2e"><b class="notacion ame">E</b><b class="notacion eur" >Mi</b></ul>
+            <div class="par">
+                <ul @click="sonido(19)" class="blanca" id="2f"><b class="notacion ame">F</b><b class="notacion eur" >Fa</b></ul>
+                <ul @click="sonido(18)" class="negra" id="2f-"><b class="notacion ame">F#</b><b class="notacion eur" >Fa#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(17)" class="blanca" id="2g"><b class="notacion ame">G</b><b class="notacion eur" >Sol</b></ul>
+                <ul @click="sonido(16)" class="negra" id="2g-"><b class="notacion ame">G#</b><b class="notacion eur" >Sol#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(15)" class="blanca" id="2a"><b class="notacion ame">A</b><b class="notacion eur" >La</b></ul>
+                <ul @click="sonido(14)" class="negra" id="2a-"><b class="notacion ame">A#</b><b class="notacion eur" >La#</b></ul>
+            </div>
+                        <ul @click="sonido(13)" class="solo" id="2b"><b class="notacion ame">B</b><b class="notacion eur" >Si</b></ul>
+            <div class="par">
+                <ul @click="sonido(12)" class="blanca" id="1c"><b class="notacion ame">C</b><b class="notacion eur" >Do</b></ul>
+                <ul @click="sonido(11)" class="negra" id="1c-"><b class="notacion ame">C#</b><b class="notacion eur" >Do#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(10)" class="blanca" id="1d"><b class="notacion ame">D</b><b class="notacion eur" >Re</b></ul>
+                <ul @click="sonido(9)" class="negra" id="1d-"><b class="notacion ame">D#</b><b class="notacion eur" >Re#</b></ul>
+            </div>
+                        <ul @click="sonido(8)" class="solo" id="1e"><b class="notacion ame">E</b><b class="notacion eur" >Mi</b></ul>
+            <div class="par">
+                <ul @click="sonido(7)" class="blanca" id="1f"><b class="notacion ame">F</b><b class="notacion eur" >Fa</b></ul>
+                <ul @click="sonido(6)" class="negra" id="1f-"><b class="notacion ame">F#</b><b class="notacion eur" >Fa#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(5)" class="blanca" id="1g"><b class="notacion ame">G</b><b class="notacion eur" >Sol</b></ul>
+                <ul @click="sonido(4)" class="negra" id="1g-"><b class="notacion ame">G#</b><b class="notacion eur" >Sol#</b></ul>
+            </div>
+            <div class="par">
+                <ul @click="sonido(3)" class="blanca" id="1a"><b class="notacion ame">A</b><b class="notacion eur" >La</b></ul>
+                <ul @click="sonido(2)" class="negra" id="1a-"><b class="notacion ame">A#</b><b class="notacion eur" >La#</b></ul>
+            </div>
+                        <ul @click="sonido(1)" class="solo" id="1b"><b class="notacion ame">B</b><b class="notacion eur" >Si</b></ul>
+        </div>
     </div>
 
-    <div class="cont piano">
-        <div class="par">
-            <ul class="blanca" id="3c"><b class="notacion ame">C</b><b class="notacion eur">Do</b></ul>
-            <ul class="negra"id="3c-"><b class="notacion ame">C#</b><b class="notacion eur">Do#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="3d"><b class="notacion ame">D</b><b class="notacion eur">Re</b></ul>
-            <ul class="negra" id="3d-"><b class="notacion ame">D#</b><b class="notacion eur">Re#</b></ul>
-        </div>
-                    <ul class="solo" id="3e"><b class="notacion ame">E</b><b class="notacion eur">Mi</b></ul>
-        <div class="par">
-            <ul class="blanca" id="3f"><b class="notacion ame">F</b><b class="notacion eur">Fa</b></ul>
-            <ul class="negra" id="3f-"><b class="notacion ame">F#</b><b class="notacion eur">Fa#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="3g"><b class="notacion ame">G</b><b class="notacion eur">Sol</b></ul>
-            <ul class="negra" id="3g-"><b class="notacion ame">G#</b><b class="notacion eur">Sol#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="3a"><b class="notacion ame">A</b><b class="notacion eur">La</b></ul>
-            <ul class="negra" id="3a-"><b class="notacion ame">A#</b><b class="notacion eur">La#</b></ul>
-        </div>
-                    <ul class="solo" id="3b"><b class="notacion ame">B</b><b class="notacion eur">Si</b></ul>
-        <div class="par">
-            <ul class="blanca" id="2c"><b class="notacion ame">C</b><b class="notacion eur">Do</b></ul>
-            <ul class="negra" id="2c-"><b class="notacion ame">C#</b><b class="notacion eur">Do#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="2d"><b class="notacion ame">D</b><b class="notacion eur">Re</b></ul>
-            <ul class="negra" id="2d-"><b class="notacion ame">D#</b><b class="notacion eur">Re#</b></ul>
-        </div>
-                    <ul class="solo" id="2e"><b class="notacion ame">E</b><b class="notacion eur">Mi</b></ul>
-        <div class="par">
-            <ul class="blanca" id="2f"><b class="notacion ame">F</b><b class="notacion eur">Fa</b></ul>
-            <ul class="negra" id="2f-"><b class="notacion ame">F#</b><b class="notacion eur">Fa#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="2g"><b class="notacion ame">G</b><b class="notacion eur">Sol</b></ul>
-            <ul class="negra" id="2g-"><b class="notacion ame">G#</b><b class="notacion eur">Sol#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="2a"><b class="notacion ame">A</b><b class="notacion eur">La</b></ul>
-            <ul class="negra" id="2a-"><b class="notacion ame">A#</b><b class="notacion eur">La#</b></ul>
-        </div>
-                    <ul class="solo" id="2b"><b class="notacion ame">B</b><b class="notacion eur">Si</b></ul>
-        <div class="par">
-            <ul class="blanca" id="1c"><b class="notacion ame">C</b><b class="notacion eur">Do</b></ul>
-            <ul class="negra" id="1c-"><b class="notacion ame">C#</b><b class="notacion eur">Do#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="1d"><b class="notacion ame">D</b><b class="notacion eur">Re</b></ul>
-            <ul class="negra" id="1d-"><b class="notacion ame">D#</b><b class="notacion eur">Re#</b></ul>
-        </div>
-                    <ul class="solo" id="1e"><b class="notacion ame">E</b><b class="notacion eur">Mi</b></ul>
-        <div class="par">
-            <ul class="blanca" id="1f"><b class="notacion ame">F</b><b class="notacion eur">Fa</b></ul>
-            <ul class="negra" id="1f-"><b class="notacion ame">F#</b><b class="notacion eur">Fa#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="1g"><b class="notacion ame">G</b><b class="notacion eur">Sol</b></ul>
-            <ul class="negra" id="1g-"><b class="notacion ame">G#</b><b class="notacion eur">Sol#</b></ul>
-        </div>
-        <div class="par">
-            <ul class="blanca" id="1a"><b class="notacion ame">A</b><b class="notacion eur">La</b></ul>
-            <ul class="negra" id="1a-"><b class="notacion ame">A#</b><b class="notacion eur">La#</b></ul>
-        </div>
-                    <ul class="solo" id="1b"><b class="notacion ame">B</b><b class="notacion eur">Si</b></ul>
-    </div>
-
+<!-- // CDN -------------------------------------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- // JS -------------------------------------------------------------------------------->
     <script> 
         // Impide que se muestre el menu contextual para poder pulsar mas tiempo una tecla si tienes pantalla tactil
             document.body.oncontextmenu = function() {return false;}
+        // Genero una nueva instancia de Vue para usar su CDN
+            const app = new Vue({
+                el: "#miApp",
+                methods:{
+                    sonido(index){
+                        const audio = new Audio();
+                        audio.src = `notas/nota${index}.mp3`;
+                        audio.load();
+                        audio.play();
+                    },
+                    nocturno(){
+                        document.getElementById('miApp').classList.toggle('nocturno');
+                        document.getElementById('piano').classList.toggle('nocturno');
+                        // cambio.classList.toogle('nocturno');
+                    }
+                }
+            })
     </script>
 </body>
 
@@ -133,6 +154,9 @@
        --colorA3: #FDD18A;
        --colorG4: #41B883;
     }
+    .cuerpo{
+        background-color: #cbd2da;
+    }
     .titulo{
         /* background-color: var(--colorB2); */
         font-size: 70px;
@@ -158,9 +182,11 @@
         transition: 0s;
         cursor: pointer;
     }
+    ul{
+        background-color: white;
+    }
     .par{
         position: relative;
-        background-color: white;
         height: 100%;
     }
     .solo, .par{
@@ -218,9 +244,9 @@
     }
     .ame{
         left: 25px;
-        display: none;
     }
     .eur{
+        display: none;
     }
     .solo > *{
         left: 25px;
@@ -243,6 +269,15 @@
     }
     .blanca .ame{
         left: 24px;
+    }
+
+    /* MODO NOCTURNO */
+    .cuerpo{
+        height: 100vh;
+        width: 100%;
+    }
+    .nocturno{
+        filter: invert(1) hue-rotate(180deg);
     }
 </style>
 </html>
