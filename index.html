@@ -23,16 +23,17 @@
             <p class="tooltip">Piano</p>
         </a>
     </div>
-    <div class="suelo"></div>
-    <img src="undraw_A_day_at_the_park_re_9kxj.svg" class="img1">
-    <img src="undraw_Walking_outside_re_56xo.svg" class="img2">
-    <img src="undraw_relaxing_walk_mljx.svg" class="img3">
-    <svg class="icono img4" viewBox="70 10 350 680" width="100" height="200">
-        <circle cx="245.55884" cy="187.61628" r="172.3117" fill="#6c63ff"/>
-        <path d="M274.32944,183.92207A172.32513,172.32513,0,0,0,561.45166,366.29173,172.32654,172.32654,0,1,1,274.32944,183.92207Z" transform="translate(-156 -111.39648)" opacity="0.2" style="isolation:isolate"/>
-        <polygon points="246.032 187.616 246.506 187.616 255.027 676.148 237.038 676.148 246.032 187.616" fill="#3f3d56"/>
-        <rect x="401.08538" y="564.58106" width="32.19013" height="8.5209" transform="translate(-372.96557 148.44822) rotate(-27.76587)" fill="#3f3d56"/>
-    </svg>
+    <div class="suelo">
+        <img src="undraw_A_day_at_the_park_re_9kxj.svg" class="img1">
+        <img src="undraw_Walking_outside_re_56xo.svg" class="img2">
+        <img src="undraw_relaxing_walk_mljx.svg" class="img3">
+        <svg class="icono img4" viewBox="70 10 350 680" width="100" height="200">
+            <circle cx="245.55884" cy="187.61628" r="172.3117" fill="#6c63ff"/>
+            <path d="M274.32944,183.92207A172.32513,172.32513,0,0,0,561.45166,366.29173,172.32654,172.32654,0,1,1,274.32944,183.92207Z" transform="translate(-156 -111.39648)" opacity="0.2" style="isolation:isolate"/>
+            <polygon points="246.032 187.616 246.506 187.616 255.027 676.148 237.038 676.148 246.032 187.616" fill="#3f3d56"/>
+            <rect x="401.08538" y="564.58106" width="32.19013" height="8.5209" transform="translate(-372.96557 148.44822) rotate(-27.76587)" fill="#3f3d56"/>
+        </svg>
+    </div>
 </body>
 <style>
      /* Normalize */
@@ -103,16 +104,10 @@
     /* No se ven los tooltips y tiene que ver con las propiedades de FIGURA*/
     .figura{
         position: absolute;
-        top: 250px;
+        top: 200px;
         width: 200px;
         height: 200px;
     }
-    /* .figura > *:hover{
-        transform: scale(1.05);
-    } */
-    /* .figura:hover div{
-        box-shadow: 0px 20px 20px 0px #8585858c;
-    } */
     .figura:hover .tooltip{
         top: -130px;
         opacity: 100%;
@@ -257,17 +252,18 @@
     }
     .img2{
         right: 50px;
-        bottom: 42px;
+        bottom: 43px;
     }
     .img3{
         left: 36%;
         transform: scale(0.6);
-        bottom: -1%;
+        bottom: -9.5px;
     }
+        /* bottom: -1%; */
     .img4{
         transform: scale(0.7);
         left: 20%;
-        bottom: 3.4%;
+        bottom: 30px;
     }
     .suelo{
         background-color: black;
@@ -276,6 +272,34 @@
         height: 2px;
         bottom: 78px;
         left: 0%;
+    }
+    @media only screen and (max-width: 400px){
+     .img2, .img2, .img3, .img4, .titulo{
+         display: none;
+     }
+     .figura{
+        top: 100px;
+     }
+     .figura div{
+         transform: scale(0.7);
+     }
+     .pos1{
+         left: 50px;
+     }
+     .pos2{
+         left: 300px;
+     }
+     .pos3{
+         left: 550px;
+     }
+     .tooltip{
+         opacity: 1;
+         top: -80px;
+         transform: scale(0.8);
+     }
+     /* .tooltip::after{
+         display: none;
+     } */
     }
 </style>
 </html>
