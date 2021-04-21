@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,10 @@
         <a class="figura pos3 mov3" href="piano/piano.html">
             <div class="tache"></div>
             <p class="tooltip">Piano</p>
+        </a>
+        <a class="figura pos4 mov4" href="login/login.html">
+            <div class="apartado"></div>
+            <p class="tooltip">Login</p>
         </a>
     </div>
     <div class="suelo">
@@ -137,6 +141,11 @@
         left: 46%;
         clip-path: polygon(100% 0, 0 0, 50% 100%);
     }
+    .figura div{
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
     .cuadrado{
         background-color:var(--colorR);
         border-radius: 1em;
@@ -168,6 +177,14 @@
     .pos3{
         left: 1000px;
     }
+    .apartado{
+        background-color: var(--baseO3);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+        border-radius: 10px 10px 0 0;
+    }
+    .pos4{
+        left: 1400px;
+    }
 /* Movimiento de figuras */
     .mov1{
         animation: 30s shake infinite alternate ease-in-out;
@@ -177,6 +194,9 @@
     }
     .mov3{
         animation: 32s shake3 infinite alternate ease-in-out;
+    }
+    .mov4{
+        animation: 28s shake4 infinite alternate ease-in-out;
     }
     @keyframes shake {
         0%{
@@ -238,6 +258,26 @@
             transform: rotate(5deg) translateX(10px)
         }
     }
+    @keyframes shake4 {
+        0%{
+            transform: rotate(-5deg) translateY(10px)
+        }
+        20%{
+            transform: rotate(7deg) translateX(-5px)
+        }
+        40%{
+            transform: rotate(-3deg) translateY(18px)
+        }
+        60%{
+            transform: rotate(7deg) translateX(18px)
+        }
+        80%{
+            transform: rotate(-2deg) translateY(4px)
+        }
+        100%{
+            transform: rotate(5deg) translateX(2px)
+        }
+    }
 /* Decoraciones */
     img, svg{
         position: fixed;
@@ -289,6 +329,9 @@
      }
      .pos3{
          left: 550px;
+     }
+     .pos4{
+         left: 800px;
      }
      .tooltip{
          opacity: 1;

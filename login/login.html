@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="contenedor"> <!--  container -->
+         <div class="forms-contenedor"> <!-- forms-container -->
+            <div class="signin-signup"> <!-- signin sign up -->
+                <form class="signin_form" action="">
+                    <h1>Login</h1>
+                    <div class="campo usuario">
+                        <svg class="icono" viewBox="0 0 448 512" width="115px" height="220px">
+                            <path fill="currentColor"
+                                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z">
+                            </path>
+                        </svg>
+                        <input class="input_usuario" type="text" placeholder="Usuario">
+                    </div>
+                    <div class="campo pw">
+                        <svg class="icono" viewBox="0 0 448 512" width="115px" height="220px">
+                            <path fill="currentColor" 
+                                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z">
+                            </path>
+                        </svg>
+                        <input class="input_pw" type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="botones">
+                        <a class="boton boton_volver" id="volver" href="../index.html">
+                            <svg class="icono" viewBox="0 0 256 512" width="115px" height="220px">
+                                <path fill="currentColor" 
+                                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+                                </path>
+                            </svg>
+                        </a>
+                        <button class="boton boton_entrar" id="entrar" type="submit">
+                            <svg class="icono" viewBox="0 -10 552 552" width="105px" height="210px">
+                                <path fill="currentColor"  
+                                    d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <form class="signup_form" action="">
+                    <h1>Registro</h1>
+                    <div class="campo email">
+                        <svg class="icono" viewBox="0 0 512 512" width="115px" height="220px">
+                            <path fill="currentColor" 
+                                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                            </path>
+                        </svg>
+                        <input class="input_usuario" type="text" placeholder="Email">
+                    </div>
+                    <div class="campo usuario">
+                        <svg class="icono" viewBox="0 0 448 512" width="115px" height="220px">
+                            <path fill="currentColor"
+                                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z">
+                            </path>
+                        </svg>
+                        <input class="input_usuario" type="text" placeholder="Usuario">
+                    </div>
+                    <div class="campo pw">
+                        <svg class="icono" viewBox="0 0 448 512" width="115px" height="220px">
+                            <path fill="currentColor" 
+                                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z">
+                            </path>
+                        </svg>
+                        <input class="input_pw" id="contrasena" type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="campo pw2">
+                        <svg class="icono" viewBox="0 0 512 512" width="115px" height="220px">
+                            <path fill="currentColor" 
+                                d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z">
+                            </path>
+                        </svg>
+                        <input class="input_pw" id="contrasenaConf" type="password" placeholder="Confirmar">
+                    </div>
+                    <div class="botones">
+                        <a class="boton boton_volver" id="volver" href="../index.html">
+                            <svg class="icono" viewBox="0 0 256 512" width="115px" height="220px">
+                                <path fill="currentColor" 
+                                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+                                </path>
+                            </svg>
+                        </a>
+                        <button class="boton boton_entrar" id="entrar" type="submit">
+                            <svg class="icono" viewBox="0 -10 552 552" width="105px" height="210px">
+                                <path fill="currentColor"  
+                                    d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="circulo"></div> <!-- panels container -->
+        <div class="ya1">
+            <h1 class="registrado">Ya estas registrado?</h1>
+            <button class="login">LOGIN</button>
+        </div>
+        <div class="ya2">
+            <h1 class="aun">Aun no te registras?</h1>
+            <button class="registro">REGISTRO</button>
+        </div>
+    </div>
+</body>
+<style>
+     /* Normalize */
+    *{
+       margin: 0;
+       padding: 0;
+       font-size: 12px;
+       text-align: left;
+       outline: none;
+       border-style: none;
+       text-decoration: none;
+       list-style: none;
+       font-family: 'Nunito', sans-serif;
+       /*font-family: 'Kumbh Sans', sans-serif;*/
+       color: black;
+       scroll-behavior: smooth;
+       transition: 0.5s;
+       box-sizing:border-box;
+       -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
+    }
+    :root{
+        --blancoHover: #f0f0f0;
+        --negro:#273849;
+        /*  
+        --primario: #56CBB9;
+        --primario: #71AEFF;
+        --primario: #FDD18A;
+        */
+
+        --primario: #F05A65;
+        --color1: #fff;
+        --color1-1: #f0f0f0;
+        --color2: #273849;
+        --color2-1: #1c2936; 
+
+    }
+    .contenedor{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    .icono{
+        width: 2em;
+        height: 2em;
+        left: 25px;
+        top: 12px;
+    }
+    .forms-contenedor{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .signin_form, .signup_form{        
+        position: relative;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-gap: 20px;
+        /* Para formatos de PC (Se ve mamalon) */
+        transform: scale(1.4);
+    }
+    .signin_form{
+        grid-template-rows: 2fr 2fr 3fr;
+    }
+    .signup_form{
+        grid-template-rows: 2fr 2fr 2fr 2fr 3fr;
+    }
+/* TITULO */
+    .signin_form h1, .signup_form h1{
+        color: var(--color2);
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: -80px;
+        font-size: 50px;
+        font-weight: 1000;
+    }
+/* BOTONES */
+        .botones{
+            grid-column: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .botones button{
+            background-color: #00000000;
+            /* opacity: 0%; */
+        }
+        .boton_volver{
+            grid-column: 1;
+        }
+        .boton_entrar{
+            grid-column: 3;
+        }
+        .boton svg{
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 10px;        
+            width: 70px;
+            height: 70px;
+        }
+        /* BOTONES_COLORES */
+            .boton_entrar svg{
+                background-color: var(--primario);
+            }
+            .boton_volver svg{
+                background-color: var(--color1);
+            }
+            .boton_entrar .icono > *{
+                color: var(--color1);
+            }
+            .boton_volver .icono > *{
+                color: #8f9fbc;
+            }
+            .boton_volver:hover svg{
+                /* background-color: var(--color1-1); */
+                transform: scale(1.3);
+            }
+            .boton_volver:hover .icono > *{
+                color: var(--color2);
+            }
+/* CAMPOS */
+        .campo{
+            background-color: var(--color1-1);
+            border-radius: 20px;
+            grid-column: 1/-1;
+            height: 4em;
+            display: grid;
+            overflow: hidden;
+            grid-template-columns: repeat(10, 1fr);
+        }       
+        .campo .icono{
+            grid-column: 1;
+            position: relative;
+        }
+        .campo .icono > *{
+           color: #8f9fbc;
+        }
+        .campo svg{
+            position: absolute;
+            top: 12px;
+            left: 30px;
+        }
+        .input_usuario, .input_pw{
+            font-size: 20px;
+            font-weight: 600;
+            background-color: var(--color1-1);
+            color: var(--color2);
+            padding: 0 20px;
+            grid-column: 3/-1;
+        }
+        ::placeholder{
+            color: var(--primario);
+        }
+        .campo:hover path, .campo:focus .icono path{
+            color: var(--primario);
+        }
+/* POSICION DE CAMPOS */
+    /* SIGNIN */
+    .signin_form .usuario{
+        grid-row: 1;
+    }
+    .signin_form .pw{
+        grid-row: 2;
+    }
+    .signin_form .botones{
+        /* Los elementos se van a la última fila con cualquiera de las 2 opciones */
+        /* Si todo está comentado el orden lo establece la maquetación de su HTML */
+        /* grid-row: -1-1; */
+        /* grid-row: 3; */
+    }
+    /* SIGNUP */
+    .signup_form .email{
+        grid-row: 1;
+    }
+    .signup_form .usuario{
+        grid-row: 2;
+    }
+    .signup_form .pw{
+        grid-row: 3;
+    }
+    .signup_form .pw2{
+        grid-row: 4;
+    }
+    .signup_form .botones{
+        grid-row: 5;
+    }
+/* MAGIA DE TRANSICIONES */
+    .circulo{
+        z-index: 2;
+        position: absolute;
+        background-color: var(--primario);
+        clip-path: circle(50% at 50% 50%);
+        width: 1500px;
+        height: 1500px;
+        left: -40%;
+        top: -25%;
+    }
+    .ya1{
+        z-index: 10;
+        position: fixed;
+        /* background-color: purple; */
+        width: 500px;
+        top: 45%;
+        left: 8%;
+        transform: scale(0.5);
+    }
+    .ya1 .registrado{
+        /* background-color:black; */
+        text-align: center;
+        font-size: 40px;
+        color: #ffffff57;
+    }
+    .ya1 .login{
+        position: absolute;
+        background-color: #ffffff57;
+        color: var(--primario);
+        font-weight: 800;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 30px;
+        left: 40%;
+        cursor: pointer;
+    }
+    .ya1 .login:hover{
+        background-color: #fff;
+    }
+    .signin_form{
+        z-index: 2;
+        margin-top: 70px;
+        display: none;
+    }
+    .signup_form{
+    }
+    .signin-signup{
+        position: absolute;
+        top: 35%;
+        bottom: 40%;
+        left: 65%;
+        display: grid;
+    }
+</style>
+</html>
