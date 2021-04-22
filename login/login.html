@@ -333,7 +333,7 @@
         z-index: 2;
     }
     .ya{
-        position: sticky;
+        position: absolute;
         z-index: 20;
         width: 500px;
         top: 50%;
@@ -347,7 +347,6 @@
         position: absolute;
         top: 40%;
         display: grid;
-        /* background-color: #5f58c2; */
         width: 50%;
         grid-template-columns: 1fr;
     }
@@ -375,22 +374,20 @@
 /* MODOS */
     /* MODO LOGIN */
         .modo_login .circulo{
-            /* 
+        /* 
             Posicion predeterminada 
             right:50% 
-            */
+        */
         }
         .modo_login #reg{
             opacity: 100%;
         }
         .modo_login #ya_reg{
             transform: translateX(800px);
-            opacity: 0;
+            opacity: 0%;
         }
         .modo_login #formularios{
             left: 50%;
-            /* right: 0%;          */
-            /* right: 1vw; */
         }
         .modo_login .signup_form{
             z-index: -100;
@@ -398,7 +395,6 @@
         }
         .modo_login .signin_form{
             opacity: 100%;
-            /* transform: translate(-20%, -20%) scale(1.4); */
         }
     /* MODO REGISTRO */
         .modo_registro .circulo{            
@@ -407,6 +403,10 @@
         .modo_registro #reg{
             transform: translateX(-800px);
             opacity: 0%;
+        }
+        .modo_registro #ya_reg{
+            opacity: 100%;
+            /* left: 80%; */
         }
         .modo_registro #formularios{
             /* right: 50%; */
@@ -440,18 +440,15 @@
     .boton .icono{
         transition: 0.5s;
     }
-/* POSICIONES */
+/* POSICIONES PREDETERMINADAS */
     .circulo{
         top: -50%;
         right: 50%;
     }
     #ya_reg{
-        left: 60%;
-    }
-    #reg{
-        /* background-color: #fff; */
-        /* margin-left: 50px; */
-        /* right: 50%; */
-    }
+        /* MODO REGISTRO */
+        /* background-color: red;*/
+        right: 0%;
+    }    
 </style>
 </html>
