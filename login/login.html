@@ -6,10 +6,10 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="contenedor"> <!--  container -->
-         <div class="forms-contenedor"> <!-- forms-container -->
-            <div class="signin-signup"> <!-- signin sign up -->
-                <form class="signin_form" action="">
+    <div id="app" class="contenedor modo_login"> <!--  container -->
+        <div class="forms-contenedor"> <!-- forms-container -->
+            <div id="formularios" class="signin-signup"> <!-- signin sign up -->
+                <form id="signin_form" class="signin_form" action="">
                     <h1>Login</h1>
                     <div class="campo usuario">
                         <svg class="icono" viewBox="0 0 448 512" width="115px" height="220px">
@@ -44,7 +44,7 @@
                         </button>
                     </div>
                 </form>
-                <form class="signup_form" action="">
+                <form id="signup_form" class="signup_form" action="">
                     <h1>Registro</h1>
                     <div class="campo email">
                         <svg class="icono" viewBox="0 0 512 512" width="115px" height="220px">
@@ -86,7 +86,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <button class="boton boton_entrar" id="entrar" type="submit">
+                        <button class="boton boton_entrar" id="registrar" type="submit">
                             <svg class="icono" viewBox="0 -10 552 552" width="105px" height="210px">
                                 <path fill="currentColor"  
                                     d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z">
@@ -97,17 +97,37 @@
                 </form>
             </div>
         </div>
-        <div class="circulo"></div> <!-- panels container -->
-        <div class="ya1">
-            <h1 class="registrado">Ya estas registrado?</h1>
-            <button class="login">LOGIN</button>
+        <div id="circulo" class="circulo">
+        </div> <!-- panels container -->
+        <div id="ya_reg" class="ya">
+            <h1 class="pregunta">Ya estas registrado?</h1>
+            <button id="login" class="login">LOGIN</button>
         </div>
-        <div class="ya2">
-            <h1 class="aun">Aun no te registras?</h1>
-            <button class="registro">REGISTRO</button>
+        <div id="reg" class="ya">
+            <h1 class="pregunta">Aun no te registras?</h1>
+            <button id="registro" class="registro">REGISTRO</button>
         </div>
     </div>
 </body>
+<script>
+    let circulo = document.getElementById('circulo');
+    let form = document.getElementById('formularios');
+    let contenedor = document.querySelector('.contenedor');
+
+    let modoRegistro = document.getElementById('registro');
+    let modoLogin = document.getElementById('login');
+
+    modoRegistro.addEventListener('click', () => {
+        contenedor.classList.remove('modo_login');
+        contenedor.classList.add('modo_registro');
+        console.log('Modo REGISTRO activado');
+    })  
+    modoLogin.addEventListener('click', () => {
+        contenedor.classList.remove('modo_registro');
+        contenedor.classList.add('modo_login');
+        console.log('Modo LOGIN activado');
+    })
+</script>
 <style>
      /* Normalize */
     *{
@@ -116,14 +136,14 @@
        font-size: 12px;
        text-align: left;
        outline: none;
-       border-style: none;
        text-decoration: none;
        list-style: none;
        font-family: 'Nunito', sans-serif;
        /*font-family: 'Kumbh Sans', sans-serif;*/
        color: black;
        scroll-behavior: smooth;
-       transition: 0.5s;
+       transition: 1s ease-in-out;
+       border-style: none;
        box-sizing:border-box;
        -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
     }
@@ -131,12 +151,13 @@
         --blancoHover: #f0f0f0;
         --negro:#273849;
         /*  
-        --primario: #56CBB9;
-        --primario: #71AEFF;
         --primario: #FDD18A;
+        --primario: #F05A65;
+        --primario: #56CBB9;
+        --primario: #5f58c2;
         */
 
-        --primario: #F05A65;
+        --primario: #71AEFF;
         --color1: #fff;
         --color1-1: #f0f0f0;
         --color2: #273849;
@@ -162,23 +183,8 @@
         top: 0;
         left: 0;
     }
-    .signin_form, .signup_form{        
-        position: relative;
-        width: 300px;
-        display: grid;
-        grid-template-columns: 1fr 8fr 1fr;
-        grid-gap: 20px;
-        /* Para formatos de PC (Se ve mamalon) */
-        transform: scale(1.4);
-    }
-    .signin_form{
-        grid-template-rows: 2fr 2fr 3fr;
-    }
-    .signup_form{
-        grid-template-rows: 2fr 2fr 2fr 2fr 3fr;
-    }
 /* TITULO */
-    .signin_form h1, .signup_form h1{
+    form h1{
         color: var(--color2);
         text-align: center;
         position: absolute;
@@ -195,7 +201,6 @@
         }
         .botones button{
             background-color: #00000000;
-            /* opacity: 0%; */
         }
         .boton_volver{
             grid-column: 1;
@@ -224,13 +229,18 @@
                 color: #8f9fbc;
             }
             .boton_volver:hover svg{
-                /* background-color: var(--color1-1); */
                 transform: scale(1.3);
             }
             .boton_volver:hover .icono > *{
                 color: var(--color2);
             }
-/* CAMPOS */
+/* CAMPOS DE LOS FORMULARIOS */
+        #signin_form{
+            grid-template-rows: 2fr 2fr 3fr;
+        }
+        #signup_form{
+            grid-template-rows: 2fr 2fr 2fr 2fr 3fr;
+        }
         .campo{
             background-color: var(--color1-1);
             border-radius: 20px;
@@ -267,88 +277,181 @@
             color: var(--primario);
         }
 /* POSICION DE CAMPOS */
-    /* SIGNIN */
-    .signin_form .usuario{
-        grid-row: 1;
-    }
-    .signin_form .pw{
-        grid-row: 2;
-    }
-    .signin_form .botones{
-        /* Los elementos se van a la última fila con cualquiera de las 2 opciones */
-        /* Si todo está comentado el orden lo establece la maquetación de su HTML */
-        /* grid-row: -1-1; */
-        /* grid-row: 3; */
-    }
-    /* SIGNUP */
-    .signup_form .email{
-        grid-row: 1;
-    }
-    .signup_form .usuario{
-        grid-row: 2;
-    }
-    .signup_form .pw{
-        grid-row: 3;
-    }
-    .signup_form .pw2{
-        grid-row: 4;
-    }
-    .signup_form .botones{
-        grid-row: 5;
-    }
-/* MAGIA DE TRANSICIONES */
-    .circulo{
-        z-index: 2;
-        position: absolute;
-        background-color: var(--primario);
-        clip-path: circle(50% at 50% 50%);
-        width: 1500px;
-        height: 1500px;
-        left: -40%;
-        top: -25%;
-    }
-    .ya1{
-        z-index: 10;
-        position: fixed;
-        /* background-color: purple; */
-        width: 500px;
-        top: 45%;
-        left: 8%;
-        transform: scale(0.5);
-    }
-    .ya1 .registrado{
-        /* background-color:black; */
+    /* SIGNIN GRID */
+        .signin_form .usuario{
+            grid-row: 1;
+        }
+        .signin_form .pw{
+            grid-row: 2;
+        }
+    /* SIGNUP GRID */
+        .signup_form .email{
+            grid-row: 1;
+        }
+        .signup_form .usuario{
+            grid-row: 2;
+        }
+        .signup_form .pw{
+            grid-row: 3;
+        }
+        .signup_form .pw2{
+            grid-row: 4;
+        }
+        .signup_form .botones{
+            grid-row: 5;
+        }
+    /* YA ELEMENTOS */
+    .ya > *{
         text-align: center;
         font-size: 40px;
         color: #ffffff57;
+        background-clip: text;
     }
-    .ya1 .login{
-        position: absolute;
+    .ya button{
+        transition: 0.5s;
+    }
+    .ya .login, .ya .registro{
         background-color: #ffffff57;
         color: var(--primario);
         font-weight: 800;
         border-radius: 10px;
         padding: 10px;
         font-size: 30px;
-        left: 40%;
         cursor: pointer;
     }
-    .ya1 .login:hover{
+    .ya .login:hover, .ya .registro:hover{
         background-color: #fff;
     }
-    .signin_form{
+/* CARACTERISTICAS DE LAS CAJAS PRINCIPALES QUE SE VAN A MOVER */
+    .circulo{
+        /* display: none; */
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        clip-path: circle(50% at 50% 50%);
+        background-color: var(--primario);
         z-index: 2;
-        margin-top: 70px;
-        display: none;
+    }
+    .ya{
+        position: sticky;
+        z-index: 20;
+        width: 500px;
+        top: 50%;
+        /* ALINEACION DE CONTENIDO POR DISPLAY FLEX */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #formularios{
+        position: absolute;
+        top: 40%;
+        display: grid;
+        /* background-color: #5f58c2; */
+        width: 50%;
+        grid-template-columns: 1fr;
+    }
+    #formularios form{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    .signin_form, .signup_form{
+        position: relative;
+        width: 300px;
+        margin: 70px auto;
+        /* top: -50px; */
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-gap: 20px;
+        /* Para formatos de PC (Se ve mamalon) */
+        transform: scale(1.4);
+    }
+    .signin_form{
+        height: 200px;
     }
     .signup_form{
+        top: -100px;
     }
-    .signin-signup{
-        position: absolute;
-        top: 35%;
-        bottom: 40%;
-        left: 65%;
-        display: grid;
+/* MODOS */
+    /* MODO LOGIN */
+        .modo_login .circulo{
+            /* 
+            Posicion predeterminada 
+            right:50% 
+            */
+        }
+        .modo_login #reg{
+            opacity: 100%;
+        }
+        .modo_login #ya_reg{
+            transform: translateX(800px);
+            opacity: 0;
+        }
+        .modo_login #formularios{
+            left: 50%;
+            /* right: 0%;          */
+            /* right: 1vw; */
+        }
+        .modo_login .signup_form{
+            z-index: -100;
+            opacity: 0%;
+        }
+        .modo_login .signin_form{
+            opacity: 100%;
+            /* transform: translate(-20%, -20%) scale(1.4); */
+        }
+    /* MODO REGISTRO */
+        .modo_registro .circulo{            
+            transform: translate(100%, 0%);
+        }
+        .modo_registro #reg{
+            transform: translateX(-800px);
+            opacity: 0%;
+        }
+        .modo_registro #formularios{
+            /* right: 50%; */
+            left: 0;
+        }
+        .modo_registro .signup_form{
+            /* opacity: 100%; */
+        }
+        .modo_registro .signin_form{
+            /* left: 20%; */
+            /* display: none; */
+            /* top: -50%; */
+            z-index: -100;
+            opacity: 0%;
+        }
+    
+/* TRANSICIONES */
+    /* DURACION ESPERA MODO */
+    .circulo{
+        transition: 2s 0.3s ease-in-out;
+    }
+    .ya{
+        transition: 1.5s 0.2s ease-in-out;
+    }
+    #formularios{
+        transition: 1.5s ease-in-out;
+    }
+    #formularios form{
+        transition: 0.1s 1s ease-in-out;
+    }
+    .boton .icono{
+        transition: 0.5s;
+    }
+/* POSICIONES */
+    .circulo{
+        top: -50%;
+        right: 50%;
+    }
+    #ya_reg{
+        left: 60%;
+    }
+    #reg{
+        /* background-color: #fff; */
+        /* margin-left: 50px; */
+        /* right: 50%; */
     }
 </style>
 </html>
