@@ -154,10 +154,10 @@
         --primario: #FDD18A;
         --primario: #F05A65;
         --primario: #56CBB9;
-        --primario: #5f58c2;
+        --primario: #71AEFF;
         */
 
-        --primario: #71AEFF;
+        --primario: #5f58c2;
         --color1: #fff;
         --color1-1: #f0f0f0;
         --color2: #273849;
@@ -429,7 +429,7 @@
         transition: 2s 0.3s ease-in-out;
     }
     .ya{
-        transition: 1.5s 0.2s ease-in-out;
+        transition: 1.5s 0.5s ease-in-out;
     }
     #formularios{
         transition: 1.5s ease-in-out;
@@ -445,10 +445,64 @@
         top: -50%;
         right: 50%;
     }
+    #reg{
+        /* background-color: blue; */
+    }
     #ya_reg{
         /* MODO REGISTRO */
-        /* background-color: red;*/
+        /* background-color: red; */
         right: 0%;
-    }    
+    }   
+    @media screen and (max-width: 950px){
+        *{
+            /* display: none; */
+        }
+        .circulo{
+            top: 70%;
+            transform: translateX(900px);
+        }
+        .modo_login .circulo{
+            /* PREDETERMINADO*/
+        }
+        .modo_registro .circulo{
+            transform: translate(900px, -122%);
+        }
+        #formularios{
+            width: 100%;
+            position: absolute;
+            top: 20%;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .modo_login #formularios{
+            left: 0;
+        }
+        .modo_registro #formularios{
+            top: 50%;
+        }
+        /* YA */
+        .ya{
+            transition: 1s 0.5s ease-in-out;
+        }
+        #reg, #ya_reg{
+            width: 100%;
+        }
+        .modo_login #reg{
+            top: 80%;
+        }
+        /* DESAPARECER */
+        .modo_login #ya_reg{
+            transform: translateY(-500px);
+            opacity: 0;
+        }
+        .modo_registro #ya_reg{
+            top: 5%;
+        }
+        /* DESAPARECER */
+        .modo_registro #reg{
+            transform: translateY(500px);
+            opacity: 0;
+        }
+    } 
 </style>
 </html>
