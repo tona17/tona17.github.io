@@ -109,7 +109,8 @@
                     // Función: Añade sonido a cada nota por indice (INDEX)
                     sonido(index){
                         const audio = new Audio();
-                        audio.src = `notas/nota${index}.mp3`;
+                        audio.src = `notas1/nota${index}.mp3`;
+                        audio.volume = 1;
                         audio.load();
                         audio.play();
                     },
