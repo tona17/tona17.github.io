@@ -7,8 +7,8 @@
     <title>Piano</title>
 </head>
 <body>
-    <div class="cuerpo togglenocturno" id="miApp">
-        <div class="titulo togglenocturno">Piano</div>
+    <div class="cuerpo" id="miApp">
+        <div id="titulo" class="titulo">Piano</div>
         <div class="botones">
             <button id="notacion" type="button" @click="notacion()">
                 <svg class="icono" viewBox="0 0 496 512" width="115px" height="220px">
@@ -116,8 +116,12 @@
                     },
                     // Función: Activa/desactiva el modo oscuro
                     nocturno(){
-                        document.getElementById('miApp').classList.toggle('nocturno');
-                        document.getElementById('piano').classList.toggle('nocturno');
+                        document.getElementById('miApp').classList.toggle('oscuro');
+                        // document.getElementById('titulo').classList.toggle('nocturno');
+                        var iconos = document.querySelectorAll('svg.icono, #titulo');
+                        iconos.forEach(function(icono){
+                            icono.classList.toggle('nocturno');
+                        });
                     },
                     // Función: Cambio la notación (De americana a europea)
                     notacion(){
@@ -151,32 +155,40 @@
        -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
     }
     :root{
-       --base: #F9F9F9;
-       --baseO: #343434;
-    
-       --base2: #F9FAFC;
-       --baseO2: #282F37;
-    
-       --baseO3: #273849;
-    
-       --colorR: #DD5B5B;
-       --colorG: #24DB9C;
-       --colorB: #5FAFE4;
-       --colorA: #FFF6A9;
-    
-       --colorR2: #FD7858;
-       --colorG2: #01AEB2;
-       --colorB2: #00A4CA;
-       --colorA2: #FEC564;
-    
-       --colorR3: #F05A65;
-       --colorG3: #56CBB9;
-       --colorB3: #71AEFF;
-       --colorA3: #FDD18A;
-       --colorG4: #41B883;
+        /*
+        --blanco: #F9F9F9;
+        --blanco: #F9FAFC;
+        */
+        --blanco: #ebebeb;
+        /*
+        --negro: #343434;
+        --negro: #282F37;
+        */
+        --negro: #273849;
+        /*
+        --primario: #F05A65;
+        --primario: #56CBB9;
+        --primario: #FDD18A;
+        --primario: #DD5B5B;
+        --primario: #24DB9C;
+        --primario: #5FAFE4;
+        --primario: #FFF6A9;
+        */
+        --primario: #71AEFF;
+        /*
+        --pastel: #ffdbd2;
+        --pastel: #d2ffda;
+        --pastel: #fff5d2;
+        */
+        --pastel: #d2e4ff;
+        /* FILTER INVERTIDO*/
+       --invertido: invert(1) hue-rotate(180deg);
     }
     .cuerpo{
-        background-color: #cbd2da;
+        background-color: var(--pastel);
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
     }
     .titulo{
         /* background-color: var(--colorB2); */
@@ -186,7 +198,7 @@
         padding: 20px;
     }
     .piano{
-        /* background-color: var(--colorA2); */
+        border: 5px solid var(--negro);
         display: flex;
         position: relative;
         box-sizing: border-box;
@@ -196,7 +208,6 @@
         height: 320px;
         border-radius: 10px;
         padding-left: -55px;
-        border: 5px solid var(--baseO3);
         overflow: hidden;
     }
     .piano > *, .piano > * > *{
@@ -204,7 +215,7 @@
         cursor: pointer;
     }
     ul{
-        background-color: white;
+        background-color: #fff;
     }
     .par{
         position: relative;
@@ -212,14 +223,14 @@
     }
     .solo, .par{
         width: 71.4px;
-        border-left: 3px solid var(--baseO);
+        border-left: 3px solid var(--negro);
     }
     .par .blanca{
         width: 100%;
         height: 100%;
     }
     .blanca:active, .solo:active{
-        box-shadow: inset 0px -1px 26px -9px rgba(0,0,0,0.75);
+        box-shadow: inset 0px -1px 26px -9px #000000bf;
     }
     .negra:active{
         height: 55%;
@@ -229,7 +240,7 @@
         z-index: 1;
         top: -2px;        
         left: 44px;
-        background-color: rgb(0, 0, 0);
+        background-color: #000;
         width: 50px;
         height: 57%;
         border-radius: 0px 0px 5px 5px;
@@ -252,7 +263,8 @@
     }
     .icono{
         position: absolute;
-        background-color: #fcfcfc8e;
+        background-color: #ffffff98;
+        /* background-color: white; */
         border-radius: 50%;
         padding: 10px;        
         width: 70px;
@@ -263,7 +275,7 @@
         right: 0;
     }
     .icono > *{
-        color: var(--baseO3);
+        color: var(--primario);
     }
 /* Notaciones */
     .piano > *{
@@ -276,8 +288,6 @@
     }
     .ame{
         left: 25px;
-    }
-    .eur{
     }
     .mostrar{
         display: none;
@@ -305,12 +315,25 @@
         left: 24px;
     }
     /* MODO NOCTURNO */
-    .cuerpo{
-        height: 100vh;
-        width: 100%;
+    .oscuro{
+        /* background-color: #2a2736; */
+        background-color: #18191a;
     }
     .nocturno{
-        filter: invert(1) hue-rotate(180deg);
+        filter: var(--invertido);
     }
+    /* Responsividad */
+    @media screen and (max-width: 812px){
+        cuerpo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .piano{ 
+            margin: 70px 0px 30px;
+        }
+    }
+
 </style>
 </html>
