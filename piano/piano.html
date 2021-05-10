@@ -6,7 +6,7 @@
     <link rel="icon" href="https://www.flaticon.es/svg/static/icons/svg/3892/3892789.svg">
     <title>Piano</title>
 </head>
-<body>
+<body id="fondo">
     <div class="cuerpo" id="miApp">
         <div id="titulo" class="titulo">Piano</div>
         <div class="botones">
@@ -25,7 +25,6 @@
                 </svg>
             </button>
         </div>
-
         <div class="cont piano" id="piano">
             <div class="par">
                 <ul @click="sonido(36)" class="blanca" id="3c"><b class="notacion ame mostrar">C</b><b class="notacion eur" >Do</b></ul>
@@ -116,7 +115,8 @@
                     },
                     // Función: Activa/desactiva el modo oscuro
                     nocturno(){
-                        document.getElementById('miApp').classList.toggle('oscuro');
+                        document.getElementById('fondo').classList.toggle('oscuro');
+                        // document.getElementById('miApp').classList.toggle('oscuro');
                         // document.getElementById('titulo').classList.toggle('nocturno');
                         var iconos = document.querySelectorAll('svg.icono, #titulo');
                         iconos.forEach(function(icono){
@@ -184,10 +184,10 @@
         /* FILTER INVERTIDO*/
        --invertido: invert(1) hue-rotate(180deg);
     }
-    .cuerpo{
+    body{
         background-color: var(--pastel);
         height: 100vh;
-        width: 100vw;
+        width: 100%;
     }
     .titulo{
         /* background-color: var(--colorB2); */
