@@ -8,6 +8,13 @@
 </head>
 
 <body>
+    <a id="volver" type="button" href="../index.html">
+        <svg class="icono" viewBox="0 0 256 512" width="115px" height="220px">
+            <path fill="currentColor" 
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+            </path>
+        </svg>
+    </a>
     <div class="contenedor">
         <button class="boton" id="atras" onclick="mover(-1)"><</button>
         <button class="boton" id="adelante" onclick="mover(1)">></button>
@@ -205,16 +212,29 @@
         height: 100%;
         width: 80px;
     }
-        .boton:hover{
-            background-color: #00000042;
-            color: #ffffff;
-            font-size: 50px;
-        }
-        #atras{
-            left: 0px;
-        }
-        #adelante{
-            right: 0px;
-        }
+    .boton:hover{
+        background-color: #00000042;
+        color: #ffffff;
+        font-size: 50px;
+    }
+    #atras{
+        left: 0px;
+    }
+    #adelante{
+        right: 0px;
+    }
+    #volver{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    .icono{
+        background-color: #ecf4ff;
+        border-radius: 50%;
+        padding: 10px;        
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+    }
 </style>
 </html>

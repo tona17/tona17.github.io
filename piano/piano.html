@@ -10,20 +10,27 @@
     <div class="cuerpo" id="miApp">
         <div id="titulo" class="titulo">Piano</div>
         <div class="botones">
-            <button id="notacion" type="button" @click="notacion()">
+            <a id="volver" type="button" href="../index.html">
+                <svg class="icono" viewBox="0 0 256 512" width="115px" height="220px">
+                    <path fill="currentColor" 
+                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+                    </path>
+                </svg>
+            </a>
+            <a id="notacion" type="button" @click="notacion()">
                 <svg class="icono" viewBox="0 0 496 512" width="115px" height="220px">
                    <path fill="currentColor" 
                       d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z">
                    </path>
                 </svg>
-            </button>
-            <button id="nocturno" type="button" @click="nocturno()">
+            </a>
+            <a id="nocturno" type="button" @click="nocturno()">
                 <svg class="icono" viewBox="0 0 352 512" width="115px" height="220px">
                     <path fill="currentColor" 
                         d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z">
                     </path>
                 </svg>
-            </button>
+            </a>
         </div>
         <div class="cont piano" id="piano">
             <div class="par">
@@ -116,12 +123,7 @@
                     // Función: Activa/desactiva el modo oscuro
                     nocturno(){
                         document.getElementById('fondo').classList.toggle('oscuro');
-                        // document.getElementById('miApp').classList.toggle('oscuro');
-                        // document.getElementById('titulo').classList.toggle('nocturno');
-                        var iconos = document.querySelectorAll('svg.icono, #titulo');
-                        iconos.forEach(function(icono){
-                            icono.classList.toggle('nocturno');
-                        });
+                        document.querySelector('#titulo').classList.toggle('nocturno');
                     },
                     // Función: Cambio la notación (De americana a europea)
                     notacion(){
@@ -131,7 +133,7 @@
                         });
                     }
                 }
-            })
+            });
     </script>
 </body>
 
@@ -188,7 +190,11 @@
         background-color: var(--pastel);
         height: 100vh;
         width: 100%;
+        user-select: none;
     }
+    /* ::selection{
+        background: transparent; 
+    } */
     .titulo{
         /* background-color: var(--colorB2); */
         font-size: 70px;
@@ -246,32 +252,23 @@
     }
 /* Botones */
     .botones{
+        display: flex;
+        justify-content: space-around;
         position: relative;
         margin: 0px auto;
-        width: 200px;
+        width: 400px;
         height: 70px;
     }
     .icono:hover{
         background-color: #fff;
     }
-    #notacion{
-        float: left;
-    }
-    #nocturno{
-        float: right;
-    }
     .icono{
-        position: absolute;
-        background-color: #ffffff98;
-        /* background-color: white; */
+        background-color: #ecf4ff;
         border-radius: 50%;
         padding: 10px;        
         width: 70px;
         height: 70px;
         cursor: pointer;
-    }
-    #nocturno .icono{
-        right: 0;
     }
     .icono > *{
         color: var(--primario);
@@ -320,6 +317,9 @@
     }
     .nocturno{
         filter: var(--invertido);
+    }
+    .opaco{
+        opacity: 50%;
     }
     /* Responsividad */
     @media screen and (max-width: 812px){

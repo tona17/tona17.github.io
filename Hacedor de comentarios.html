@@ -8,7 +8,13 @@
 </head>
 <body>
 <!-- //HTML VUEceado ----------------------------------------------------------------------->
-
+    <a id="volver" type="button" href="index.html">
+        <svg class="icono" viewBox="0 0 256 512" width="115px" height="220px">
+            <path fill="currentColor" 
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+            </path>
+        </svg>
+    </a>
     <div class="cont" id="miniapp">
         <input type="text" 
                 :placeholder="placeholderDinamico.contP"
@@ -84,19 +90,32 @@
         transition: .7s ease-in-out;
     }
     :root{
-        --verde: #41B883;
+        --primario: #41B883;
     }
     input[type=text] {
         transition: border-width 0.6s linear;
-        color: var(--verde);
-        border-left: 10px solid var(--verde);
-        border-right: 10px solid var(--verde);
+        color: var(--primario);
+        border-left: 10px solid var(--primario);
+        border-right: 10px solid var(--primario);
     }
     ::placeholder{
         color:  #637591;
     }
     body{
         background-color:#282C34;
+    }
+    #volver{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+    .icono{
+        background-color: #ecf4ff;
+        border-radius: 50%;
+        padding: 10px;        
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
     }
     .cont{   
         margin: 10px auto;
@@ -137,6 +156,14 @@
     .caja button:hover {
         background-color: #cc4c4c;
         clip-path: circle(50% at 50% 50%);
+    }
+    @media screen and (max-width: 375px){
+        .cont{
+            font-size: 7px;
+        }
+        button{
+            opacity: 100%;
+        }
     }
 </style>
 </html>
